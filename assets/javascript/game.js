@@ -17,7 +17,7 @@ var computerPick = computerChoice[Math.floor(Math.random() * computerChoice.leng
 // create new variable so that the original content is untouched
 var who = computerPick;
 computerPick = computerPick.toUpperCase();
-
+console.log("Computer picked " + who);
 //push each character in the word as a blank "-"
 for (var i = 0; i < computerPick.length; i++) {
     //if there is spaces in the word, skip it
@@ -31,8 +31,8 @@ for (var i = 0; i < computerPick.length; i++) {
 };
 
 //Make sure both arrays are the same length
-console.log(pick);
-console.log(currentWord);
+// console.log(pick);
+// console.log(currentWord);
 
 //create function that updates the html
 function updateHTML() {
@@ -75,7 +75,7 @@ function lose() {
         alert("You failed to save the world, would you like to try again?");
         loopAudio = false;
         audio.pause(); // if you want
-    }, 1000);
+    }, 200);
 }
 
 //What happens when the user wins the game? Audio!
@@ -95,7 +95,7 @@ function win() {
         alert("You saved the world! Wanna try again?");
         loopAudio = false;
         audio.pause(); // if you want
-    }, 1000);
+    }, 200);
 }
 
 
@@ -138,7 +138,7 @@ function outcome(result) {
 
     who = computerPick;
     computerPick = computerPick.toUpperCase();
-
+    console.log("Computer picked " + who);
     //push each character in the word as a blank "-"
     for (var i = 0; i < computerPick.length; i++) {
         if (computerPick[i] === " ") {
@@ -148,8 +148,6 @@ function outcome(result) {
 
             currentWord.push(computerPick[i]);
         };
-        console.log(pick);
-        console.log(currentWord);
         updateHTML();
     };
 };
@@ -165,7 +163,7 @@ document.onkeyup = function (e) {
     userGuess = userGuess.toUpperCase();
 
     console.log("User presses " + userGuess);
-    console.log("Computer's choice is " + computerPick);
+    // console.log("Computer's choice is " + computerPick);
 
     // If user hits a key that they hit before
     if (currentGuess.includes(userGuess)) {
