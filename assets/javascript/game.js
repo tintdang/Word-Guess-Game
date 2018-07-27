@@ -1,5 +1,5 @@
 // Use an array for all available options
-var computerChoice = ["cloud", "zidane", "hello", "mary", "martha"]
+var computerChoice = ["cloud", "zidane", "tina", "squall", "titus"]
 // var computerChoice = ["tennessee"];
 
 //ideas, final fantasy protags
@@ -90,6 +90,7 @@ document.onkeyup = function (e) {
         //If the key matches with any letter in the array
         if (currentWord.includes(userGuess)) {
 
+            // If user presses the same key
             // if(currentGuess.includes(UserGuess)) {
             //     alert("You already tried " + UserGuess + "!, Try again!");
             //     return;
