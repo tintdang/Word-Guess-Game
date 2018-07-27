@@ -1,0 +1,30 @@
+html,
+body {
+    height: 100%;
+}
+
+body{
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#jumbo {
+    background: rgba(33, 191, 219, 0.5);
+
+}
+
+#title{
+    color: rgb(0, 0, 0);
+
+}
+
+#instructions{
+
+}
+
+p{
+    font-family: 'fantasy';
+    font-weight: bold;
+}

@@ -24,6 +24,11 @@ console.log(currentWord);
 
 //create function that updates the html
 function updateHTML() {
+
+    if (guessesLeft === 0) {
+        outcome("lose");
+    }
+
     var win = wins; // updates the counter on winning
     var guess = guessesLeft;
     var current = currentGuess;
@@ -35,6 +40,9 @@ function updateHTML() {
     document.getElementById("guess").innerHTML = guess; // shows how many guesses are remaining
     document.getElementById("currentGuess").innerHTML = current;
     document.getElementById("currentWord").innerHTML = choice;
+
+
+    //If user runs out of guesses, they lose!
 
 }
 
@@ -49,7 +57,7 @@ function outcome(result) {
     //If they lose the game
     else if (result === "lose") {
         alert("You lost! Try again by clicking okay.");
-    }
+    };
 
     // Then reset the brackets
     currentGuess = [];
@@ -64,11 +72,11 @@ function outcome(result) {
     for (var i = 0; i < computerPick.length; i++) {
         pick.push("-");
         currentWord.push(computerPick[i]);
-    }
+    };
     console.log(pick);
     console.log(currentWord);
     updateHTML();
-}
+};
 
 
 updateHTML(); //Updates the HTML to place the blank word
@@ -101,23 +109,18 @@ document.onkeyup = function (e) {
                 if (userGuess === currentWord[i]) {
                     pick[i] = userGuess;
                 }
-            }
+            };
 
             //After check if the array has no blanks, if they don't they win!
             if (!pick.includes("-")) {
                 outcome("win");
-            }
-        }
-
-        //If user runs out of guesses, they lose!
-        if (guessesLeft === 1) {
-            outcome("lose");
+            };
         }
 
         else {
             guessesLeft--;
-        }
+        };
 
-    }
+    };
     updateHTML(); //Updates the score counter
-}
+};

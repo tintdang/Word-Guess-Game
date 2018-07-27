@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="display-4" style="text-align: center">Hangman Game!</h1>
-        <p class="lead" style="text-align: center">Press Any Key to Get Started!</p>
+    <div class="jumbotron" id="jumbo">
+        <h1 class="display-4" id="title" style="text-align: center">Hangman Game!</h1>
+        <p class="lead" id="instructions" style="text-align: center">Press Any Key to Get Started!</p>
         <hr class="my-4">
     </div>
 
@@ -21,11 +22,11 @@
         <p>Wins</p>
         <p id="wins"><br></p> <!--Makes blank space to fit in wins-->
         <p>Current Word</p>
-        <div id="currentWord"></div>
+        <p id="currentWord"></p>
         <p>Number of Guesses Remaining</p>
         <p id="guess"><br></p>
         <p>Letters already guessed</p>
-        <div id="currentGuess"></div>
+        <p id="currentGuess"></p>
     </div>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
