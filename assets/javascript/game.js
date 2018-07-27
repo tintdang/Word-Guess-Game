@@ -57,7 +57,11 @@ function outcome(result) {
         var replace = document.getElementById("currentWord").textContent;
         document.getElementById("currentWord").textContent = choice;
 
+        //Call the div with the image function
+        var img = document.getElementById("img");
+        img.setAttribute("src", "assets/images/" + computerPick + ".jpg");
         alert("You saved the world! Wanna try again?");
+        console.log(img);
     }
 
     //If they lose the game
