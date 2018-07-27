@@ -1,5 +1,5 @@
 // Use an array for all available options
-var computerChoice = ["cloud", "zidane", "tina", "squall", "titus"]
+var computerChoice = ["CLOUD", "ZIDANE", "TERRA", "SQUALL", "TITUS"]
 // var computerChoice = ["tennessee"];
 
 //ideas, final fantasy protags
@@ -9,7 +9,7 @@ var currentGuess = [];
 var guessesLeft = 10;
 var pick = []; //array for the pick to be held in.
 var currentWord = []; //array to hold each letter of the selected word
-var allowedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; //Selected characters that are allowed in this game.
+var allowedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; //Selected characters that are allowed in this game.
 
 // pick a random choice from the array.
 var computerPick = computerChoice[Math.floor(Math.random() * computerChoice.length)];
@@ -30,16 +30,16 @@ function updateHTML() {
     }
 
     var win = wins; // updates the counter on winning
-    var guess = guessesLeft;
-    var current = currentGuess;
-    var choice = pick; // what the computer picked
+    var guess = guessesLeft; //Shows how many guesses are rmaining
+    var current = currentGuess; // What the user already picked
+    var choice = pick; //The array that contains the '-' and answer
 
 
 
     document.getElementById("wins").innerHTML = win; // replaces counter if winning
     document.getElementById("guess").innerHTML = guess; // shows how many guesses are remaining
-    document.getElementById("currentGuess").innerHTML = current;
-    document.getElementById("currentWord").innerHTML = choice;
+    document.getElementById("currentGuess").innerHTML = current; //Updates what the user has already picked
+    document.getElementById("currentWord").innerHTML = choice; //updates the selected word
 
 
     //If user runs out of guesses, they lose!
@@ -52,11 +52,17 @@ function outcome(result) {
     //If they win the game
     if (result === "win") {
         wins++;
+        var choice = pick;
+        //Want to update the winning word and then update the photo to the hero selected
+        var replace = document.getElementById("currentWord").textContent;
+        document.getElementById("currentWord").textContent = choice;
+
+        alert("You saved the world! Wanna try again?");
     }
 
     //If they lose the game
     else if (result === "lose") {
-        alert("You lost! Try again by clicking okay.");
+        alert("You lost! Try again by clicking ok.");
     };
 
     // Then reset the brackets
@@ -84,25 +90,28 @@ updateHTML(); //Updates the HTML to place the blank word
 //Test function
 document.onkeyup = function (e) {
     var userGuess = e.key;
+
+
+    //Change lowercase letter to uppercase
+    userGuess = userGuess.toUpperCase();
+
     console.log("User presses " + userGuess);
     console.log("Computer's choice is " + computerPick);
 
-
+    // If user hits a key that they hit before
+    if (currentGuess.includes(userGuess)) {
+        alert("You already pressed " + userGuess)
+        return;
+    }
 
     //This checks if the user is actually hitting the alphabetical keys
-    if (allowedCharacters.includes(userGuess)) {
+    else if (allowedCharacters.includes(userGuess)) {
 
         //First puts user's guess into an array;
         currentGuess.push(userGuess);
 
         //If the key matches with any letter in the array
         if (currentWord.includes(userGuess)) {
-
-            // If user presses the same key
-            // if(currentGuess.includes(UserGuess)) {
-            //     alert("You already tried " + UserGuess + "!, Try again!");
-            //     return;
-            // }
 
             //Replace the blanks with the correct matched letter.
             for (var i = 0; i < currentWord.length; i++) {
