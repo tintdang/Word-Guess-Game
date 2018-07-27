@@ -1,5 +1,5 @@
 // Use an array for all available options
-var computerChoice = ["Cloud Strife", "Zidane Tribal", "Terra Branford", "Squall Leonhart", "Titus", "Warrior of Light", "Firion", "Onion Knight", "Cecil Harvey", "Bartz Klauser", "Vaan", "Lightning", "Noctus Lucis Caelum"];
+var computerChoice = ["Cloud Strife", "Zidane Tribal", "Terra Branford", "Squall Leonhart", "Titus", "Warrior of Light", "Firion", "Onion Knight", "Cecil Harvey", "Bartz Klauser", "Vaan", "Lightning", "Noctis Lucis Caelum"];
 
 //ideas, final fantasy protags
 //hold variables for wins, letters already guessed and how many guesses left
