@@ -1,5 +1,5 @@
 // Use an array for all available options
-var computerChoice = ["CLOUD", "ZIDANE", "TERRA", "SQUALL", "TITUS"]
+var computerChoice = ["Cloud", "Zidane", "Terra", "Squall", "Titus", "Warrior of Light"];
 // var computerChoice = ["tennessee"];
 
 //ideas, final fantasy protags
@@ -14,11 +14,20 @@ var allowedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 // pick a random choice from the array.
 var computerPick = computerChoice[Math.floor(Math.random() * computerChoice.length)];
 
+// capitalize their name in order for the rest of the code to work
+computerPick = computerPick.toUpperCase();
+
 //push each character in the word as a blank "-"
 for (var i = 0; i < computerPick.length; i++) {
-    pick.push("-");
-    currentWord.push(computerPick[i]);
-}
+    //if there is spaces in the word, skip it
+    if (computerPick[i] === " ") {
+        continue;
+    } else {
+        pick.push("-");
+
+        currentWord.push(computerPick[i]);
+    };
+};
 console.log(pick);
 console.log(currentWord);
 
@@ -59,7 +68,11 @@ function outcome(result) {
 
         //Call the div with the image function
         var img = document.getElementById("img");
+        //replace the image with the src image connected by name
         img.setAttribute("src", "assets/images/" + computerPick + ".jpg");
+        //replace the name text with the character name
+
+        //alert they won the game
         alert("You saved the world! Wanna try again?");
         console.log(img);
     }

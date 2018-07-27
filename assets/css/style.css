@@ -11,7 +11,7 @@ body{
 }
 
 #jumbo {
-    background: rgba(33, 191, 219, 0.5);
+    background: rgba(33, 191, 219, 0.7);
 
 }
 
@@ -27,16 +27,18 @@ body{
 
 }
 
-#img,
+#imgbox,
 #game {
-    background: rgba(33, 191, 219, 0.5);
+    background: rgba(33, 191, 219, 0.9);
 }
 img{
     margin-top:20px;
     border: 1px solid black;
 }
 
-
+#who {
+    padding-top: 20px;
+}
 
 p{
     font-family: 'fantasy';
