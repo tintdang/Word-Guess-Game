@@ -59,6 +59,47 @@ function updateHTML() {
 
 }
 
+//Created function to play sound when user loses
+function lose() {
+    var audio = new Audio('assets/audio/gameover.ogg'), loopAudio = false;
+    audio.addEventListener('play', function () {   // bec the audio is long, trying to shorten it's length.
+        this.currentTime = 52;
+    });
+    audio.addEventListener('ended', function () {
+        if (loopAudio) {
+            audio.play();
+        }
+    });//Cuts music if user presses ok
+    setTimeout(function () {
+        loopAudio = true;
+        audio.play();
+        alert("You failed to save the world, would you like to try again?");
+        loopAudio = false;
+        audio.pause(); // if you want
+    }, 1000);
+}
+
+//What happens when the user wins the game? Audio!
+function win() {
+    var audio = new Audio('assets/audio/victory.mp3'), loopAudio = false;
+    audio.addEventListener('play', function () {   // bec the audio is long, trying to shorten it's length.
+        this.currentTime = 9;
+    });
+    audio.addEventListener('ended', function () {
+        if (loopAudio) {
+            audio.play();
+        }
+    });//Cuts music if user presses ok
+    setTimeout(function () {
+        loopAudio = true;
+        audio.play();
+        alert("You saved the world! Wanna try again?");
+        loopAudio = false;
+        audio.pause(); // if you want
+    }, 1000);
+}
+
+
 //Create the win and lose outcome properties
 function outcome(result) {
 
@@ -77,14 +118,14 @@ function outcome(result) {
         //replace the name text with the character name
         var name = document.getElementById("who");
         name.textContent = who;
-        //alert they won the game
-        alert("You saved the world! Wanna try again?");
+        //alert they won the game and cue music
+        win();
         console.log(img);
     }
 
     //If they lose the game
     else if (result === "lose") {
-        alert("You failed to save the world, would you like to try again?");
+        lose();
     };
 
     // Then reset the brackets
