@@ -15,6 +15,8 @@ var allowedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 var computerPick = computerChoice[Math.floor(Math.random() * computerChoice.length)];
 
 // capitalize their name in order for the rest of the code to work
+// create new variable so that the original content is untouched
+var who = computerPick;
 computerPick = computerPick.toUpperCase();
 
 //push each character in the word as a blank "-"
@@ -28,6 +30,8 @@ for (var i = 0; i < computerPick.length; i++) {
         currentWord.push(computerPick[i]);
     };
 };
+
+//Make sure both arrays are the same length
 console.log(pick);
 console.log(currentWord);
 
@@ -69,9 +73,10 @@ function outcome(result) {
         //Call the div with the image function
         var img = document.getElementById("img");
         //replace the image with the src image connected by name
-        img.setAttribute("src", "assets/images/" + computerPick + ".jpg");
+        img.setAttribute("src", "assets/images/" + who + ".jpg");
         //replace the name text with the character name
-
+        var name = document.getElementById("who");
+        name.textContent = who;
         //alert they won the game
         alert("You saved the world! Wanna try again?");
         console.log(img);
@@ -79,7 +84,7 @@ function outcome(result) {
 
     //If they lose the game
     else if (result === "lose") {
-        alert("You lost! Try again by clicking ok.");
+        alert("You failed to save the world, would you like to try again?");
     };
 
     // Then reset the brackets
@@ -91,16 +96,23 @@ function outcome(result) {
     //Computer picks out a new word
     computerPick = computerChoice[Math.floor(Math.random() * computerChoice.length)];
 
+    who = computerPick;
+    computerPick = computerPick.toUpperCase();
+
     //push each character in the word as a blank "-"
     for (var i = 0; i < computerPick.length; i++) {
-        pick.push("-");
-        currentWord.push(computerPick[i]);
-    };
-    console.log(pick);
-    console.log(currentWord);
-    updateHTML();
-};
+        if (computerPick[i] === " ") {
+            continue;
+        } else {
+            pick.push("-");
 
+            currentWord.push(computerPick[i]);
+        };
+        console.log(pick);
+        console.log(currentWord);
+        updateHTML();
+    };
+};
 
 updateHTML(); //Updates the HTML to place the blank word
 
