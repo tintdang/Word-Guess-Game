@@ -15,19 +15,34 @@
     <div class="jumbotron" id="jumbo">
         <h1 class="display-4" id="title" style="text-align: center">Hangman Game!</h1>
         <p class="lead" id="instructions" style="text-align: center">Press Any Key to Get Started!</p>
-        <hr class="my-4">
     </div>
 
-    <div id="game">
-        <p>Wins</p>
-        <p id="wins"><br></p> <!--Makes blank space to fit in wins-->
-        <p>Current Word</p>
-        <p id="currentWord"></p>
-        <p>Number of Guesses Remaining</p>
-        <p id="guess"><br></p>
-        <p>Letters already guessed</p>
-        <p id="currentGuess"></p>
+    <div class="container">
+        <div class="row" id="gamebox">
+            <!--To place the content in the middle.-->
+            <div class="col-md-2"></div>
+            <div class="col-md-4 text-center" id="img"><img class"img-fluid img-thumbnail" src="https://placehold.it/200x200" alt="placeholder"></div>
+            <!--To place revealed images-->
+
+            <div class="col-md-4" id="game">
+                <p>Wins</p>
+                <p id="wins">
+                    <br>
+                </p>
+                <!--Makes blank space to fit in wins-->
+                <p>Current Word</p>
+                <p id="currentWord"></p>
+                <p>Number of Guesses Remaining</p>
+                <p id="guess">
+                    <br>
+                </p>
+                <p>Letters already guessed</p>
+                <p id="currentGuess"></p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
     </div>
+
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 

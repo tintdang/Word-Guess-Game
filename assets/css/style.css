@@ -24,7 +24,24 @@ body{
 
 }
 
+#gamebox{
+    
+
+}
+
+#img,
+#game {
+    background: rgba(33, 191, 219, 0.5);
+}
+img{
+    margin-top:20px;
+    border: 1px solid black;
+}
+
+
+
 p{
     font-family: 'fantasy';
     font-weight: bold;
+    text-align: center;
 }
