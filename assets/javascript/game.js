@@ -20,9 +20,11 @@ computerPick = computerPick.toUpperCase();
 console.log("Computer picked " + who);
 //push each character in the word as a blank "-"
 for (var i = 0; i < computerPick.length; i++) {
-    //if there is spaces in the word, skip it
+    //if there is spaces in the word, add it
     if (computerPick[i] === " ") {
-        continue;
+        pick.push("&nbsp");
+
+        currentWord.push("&nbsp");
     } else {
         pick.push("-");
 
@@ -45,13 +47,13 @@ function updateHTML() {
     var guess = guessesLeft; //Shows how many guesses are rmaining
     var current = currentGuess; // What the user already picked
     var choice = pick; //The array that contains the '-' and answer
-
+     
 
 
     document.getElementById("wins").innerHTML = win; // replaces counter if winning
     document.getElementById("guess").innerHTML = guess; // shows how many guesses are remaining
     document.getElementById("currentGuess").innerHTML = current; //Updates what the user has already picked
-    document.getElementById("currentWord").innerHTML = choice; //updates the selected word
+    document.getElementById("currentWord").innerHTML = choice.join(""); //updates the selected word
 
 
     //If user runs out of guesses, they lose!
@@ -142,7 +144,8 @@ function outcome(result) {
     //push each character in the word as a blank "-"
     for (var i = 0; i < computerPick.length; i++) {
         if (computerPick[i] === " ") {
-            continue;
+            pick.push("&nbsp");
+            currentWord.push("&nbsp");
         } else {
             pick.push("-");
 

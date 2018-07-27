@@ -30,6 +30,11 @@ img{
     border: 1px solid black;
 }
 
+#currentWord,
+#currentGuess {
+    letter-spacing: 3px;
+}
+
 #who {
     padding-top: 20px;
 }
