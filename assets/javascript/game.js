@@ -53,7 +53,7 @@ function updateHTML() {
     document.getElementById("wins").innerHTML = win; // replaces counter if winning
     document.getElementById("guess").innerHTML = guess; // shows how many guesses are remaining
     document.getElementById("currentGuess").innerHTML = current; //Updates what the user has already picked
-    document.getElementById("currentWord").innerHTML = choice.join(""); //updates the selected word
+    document.getElementById("currentWord").innerHTML = choice.join(""); //updates the selected word with no commas
 
 
     //If user runs out of guesses, they lose!
