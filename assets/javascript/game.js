@@ -1,12 +1,11 @@
 // Use an array for all available options
-var computerChoice = ["Cloud", "Zidane", "Terra", "Squall", "Titus", "Warrior of Light"];
-// var computerChoice = ["tennessee"];
+var computerChoice = ["Cloud Strife", "Zidane Tribal", "Terra Branford", "Squall Leonhart", "Titus", "Warrior of Light", "Firion", "Onion Knight", "Cecil Harvey", "Bartz Klauser", "Vaan", "Lightning", "Noctus Lucis Caelum"];
 
 //ideas, final fantasy protags
 //hold variables for wins, letters already guessed and how many guesses left
 var wins = 0;
 var currentGuess = [];
-var guessesLeft = 10;
+var guessesLeft = 6;
 var pick = []; //array for the pick to be held in.
 var currentWord = []; //array to hold each letter of the selected word
 var allowedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; //Selected characters that are allowed in this game.
@@ -130,7 +129,7 @@ function outcome(result) {
 
     // Then reset the brackets
     currentGuess = [];
-    guessesLeft = 10;
+    guessesLeft = 6;
     pick = []; //array for the pick to be held in.
     currentWord = [];
 
