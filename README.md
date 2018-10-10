@@ -1,6 +1,6 @@
 # Word-Guess-Game Final Fantasy Version!
 
-Guess the word I'm thinking of! A hangman game with the theme of Final Fantasy Protagonists
+Guess the character I'm thinking of! A hangman game with the theme of Final Fantasy Protagonists.
 
 
 ## Demo
