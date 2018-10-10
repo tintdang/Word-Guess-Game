@@ -4,7 +4,7 @@ Guess the word I'm thinking of! A hangman game with the theme of Final Fantasy P
 
 
 ## Demo
-<img width='800' src='./assets/images/example.gif'><br>
+<img src='./assets/images/example.gif'><br>
 [Click here to start playing](https://tintdang.github.io/Word-Guess-Game/)
 
 ### Getting Started
